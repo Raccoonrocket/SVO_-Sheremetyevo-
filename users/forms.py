@@ -16,3 +16,9 @@ class UserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
         fields = ("username", "email")
+
+
+class DataForm(forms.Form):
+    threshold_value = forms.IntegerField(label='Пороговое значение', min_value=1, required=False)
+    crusher_slot_size = forms.IntegerField(label='Размер щели дробилки (мм)', min_value=1, required=False)
+    ore_data = forms.FileField(label='Данные', required=False)
