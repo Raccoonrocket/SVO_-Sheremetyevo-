@@ -33,10 +33,13 @@ class Register(View):
 
 def index(request):
     if request.method == 'POST':
-        threshold_value = request.POST.get('threshold_value')
-        crusher_slot_size = request.POST.get('crusher_slot_size')
-        # ore_data =
-        return HttpResponse(f'<h2>Threshold_value= {threshold_value} ,  Crusher_slot_size= {crusher_slot_size}</h2>')
+        date_time = request.POST.get('date_time')
+        arrival_departure = request.POST.get('arrival_departure')
+        number_of_pass = request.POST.get('number_of_pass')
+        parking_place = request.POST.get('parking_place')
+        gate_number = request.POST.get('gate_number')
+        return HttpResponse(f'<h2>{date_time}, {arrival_departure}, {number_of_pass}, '
+                            f'{parking_place}, {gate_number}</h2>') # plug
     else:
         data_form = DataForm()
         return render(request, 'index.html', {'form': data_form})

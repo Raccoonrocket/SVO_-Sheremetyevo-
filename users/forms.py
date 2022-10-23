@@ -19,6 +19,12 @@ class UserCreationForm(UserCreationForm):
 
 
 class DataForm(forms.Form):
-    threshold_value = forms.IntegerField(label='Пороговое значение', min_value=1, required=False)
-    crusher_slot_size = forms.IntegerField(label='Размер щели дробилки (мм)', min_value=1, required=False)
-    ore_data = forms.FileField(label='Данные', required=False)
+    date_time = forms.DateTimeField()
+    arrival_departure = forms.CharField(max_length=1)  # change
+    number_of_pass = forms.IntegerField()
+    parking_place = forms.IntegerField()
+    gate_number = forms.IntegerField()
+
+    # threshold_value = forms.IntegerField(label='Пороговое значение', min_value=1, required=False)
+    # crusher_slot_size = forms.IntegerField(label='Размер щели дробилки (мм)', min_value=1, required=False)
+    # ore_data = forms.FileField(label='Данные', required=False)

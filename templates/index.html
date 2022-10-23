@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Polyus Hack</title>
-</head>
-<body>
-    <form method="POST">
-        {% csrf_token %}
-    <table>
+{% extends 'home.html' %}
+
+{% block content %}
+    <h1>Index</h1>
+    <hr>
+
+    <form action="{% url 'index' %}" method="post">
         {{ form }}
-    </table>
-    <input type="submit" value="Отправить">
+        {% csrf_token %}
+    <button type="submit" class="btn btn-success">submit</button>
     </form>
-</body>
-</html>
+{% endblock %}
